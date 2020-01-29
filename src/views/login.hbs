@@ -1,0 +1,13 @@
+<section class="main__container--limited-width">
+  <h1 class="main__title">LOGIN</h1>
+
+  <form class="login__form" action="/authenticate" method="POST">
+    <input class="text-input" type="text" name="username" placeholder="Username">
+    <input class="text-input" type="password" name="password" placeholder="Password">
+    <input class="submit" type="submit" value="Submit">
+  </form>
+
+  {{#if error}}
+  <span style="color:red;">{{error}}</span>
+  {{/if}}
+</section>
