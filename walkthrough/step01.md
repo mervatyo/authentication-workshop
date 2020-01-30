@@ -29,13 +29,24 @@ __1. Simple hash__
 
 This is somewhat better than storing a plaintext password, but is not that great due to the fact that one computer can compute billions of hashes per second. In fact, huge databases of pre-computed hashes of the most common passwords already exist. These are known as **rainbow tables**. 6.5 million LinkedIn passwords were hacked in 2012. While they were hashed, they were not 'salted' and were therefore eventually all cracked.
 
+<img src="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LhlOQMrG9bRiqWpegM0%2F-LhlOTG3w57kUSFndpUZ%2F-LhlPiOYf9KmFWZ3hlTZ%2Fcrypto-hash-function.jpg?generation=1560975961610748&alt=media" alt="" styles="text-align:center;" />
+
+### 
+
 
 __2. Hash with a fixed salt__
 
 This is where you add something known as a **salt**. A salt is a long string of random bytes, added to the password before hashing, to alter the resulting hash. A fixed salt will prevent an attacker using rainbow tables against your hashes. It will also not be possible to brute force the hashes without the salt. However, the salt would be stored in your database or in an environment variable, and if your server has been compromised, it is likely the attacker knows the salt also.
+<img src="https://blogs.quickheal.com/wp-content/uploads/2012/06/password-hash-salt.png" alt="" styles="text-align:center;" />
+
+### 
+
 
 __3. Hash with per user salt__
 Generating a new salt for each new hash is another improvement. You create the salt, create the hash, then store both of them in the database together to be used when a user tries to log in. This means that even in the event of an attacker getting a database dump, each password would have to be brute forced individually.
+<img src="https://cdn.auth0.com/blog/adding-salt-to-hashing-a-better-way-to-store-passwords/password-salt-example.png" alt="" styles="text-align:center;" />
+
+### 
 
 __4. bcrypt__  
 bcrypt (paper [here](http://www.openbsd.org/papers/bcrypt-paper.ps)) is a hash function that was specifically designed for passwords, and designed to be _very slow_.
@@ -66,7 +77,7 @@ Using the `addNewUser` method from our model, add the user to our db and then re
 
 your Json file should be something similar to this:
 
-<img src="https://i.imgur.com/J6wIYzK.png" alt="node-girls-logo" styles="text-align:center;" />
+<img src="https://i.imgur.com/J6wIYzK.png" alt="" styles="text-align:center;" />
 
 
 #### 3. Handling and showing errors
@@ -79,7 +90,7 @@ Sub-tasks:
 - Handle other possbile errors that might occur. (for this check the `addNewUser` method and what it does reject or error on)
 
 for example :
-<img src="https://i.imgur.com/iRs9vPi.png" alt="node-girls-logo" styles="text-align:center;" />
+<img src="https://i.imgur.com/crW8vHi.png" alt="node-girls-logo" styles="text-align:center;" />
 
 
 
