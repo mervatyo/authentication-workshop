@@ -1,3 +1,4 @@
+// use these functions to manipulate our database
 const { findByUsername, addNewUser } = require('../models/users/User.model');
 const bcrypt = require('bcrypt');
 
@@ -8,6 +9,15 @@ exports.registerPage = (req, res) => {
   res.render('register', { activePage: { register: true } });
 };
 
+// This function handles the POST /addUser route
+// checks if the password and confirmPassword are equal if not send back 
+// a proper error message
+// hash the password, then add the new user to our database using the v addNewUser method
+// make sure to handle any error that might occured
+exports.addUser = (req, res, err) => {
+  
+};
+
 // this function handles the POST /authenticate route
 // it finds the user in our database by his username that he inputed
 // then compares the password that he inputed with the one in the db
@@ -16,13 +26,4 @@ exports.registerPage = (req, res) => {
 // also handle all possible errors that might occured by sending a message back to the cleint
 exports.authenticate = async (req, res) => {
 
-};
-
-// This function handles the POST /addUser route
-// checks if the password and confirmPassword are equal if not send back 
-// a proper error message
-// hash the password, then add the new user to our database using the v addNewUser method
-// make sure to handle any error that might occured
-exports.addUser = (req, res, err) => {
-  
 };
