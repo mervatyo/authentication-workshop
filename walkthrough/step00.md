@@ -30,7 +30,7 @@ later on we will be adding error messages to them to indicate to the user that s
 ### Installation guide
 
 - fork the repo
-- `git clone {you profile repo taht you just forked}`
+- `git clone {your profile repo that you just forked}`
 - `npm i`
 - `npm run dev` to run the server
 
