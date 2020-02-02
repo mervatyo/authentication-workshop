@@ -10,11 +10,14 @@ const db = require(USERS_PATH);
 const checkIfUserExists = username => 
   !!db.users.filter(user => user.username === username).length
 
+
+/**
+ * @param  {string} username
+ */
 exports.findByUsername = username =>
   new Promise((resolve, reject) => {
     // will stop at the first user found
     db.users.forEach(user => {
-      console.log(user.username, username)
       if (user.username === username) {
         resolve(user);
       }
@@ -23,6 +26,11 @@ exports.findByUsername = username =>
     reject(new Error('No user was found'));
   });
 
+
+/**
+ * @param  {string} username
+ * @param  {string} password
+ */
 exports.addNewUser = async (username, password) =>
   new Promise((resolve, reject) => {
 

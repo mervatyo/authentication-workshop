@@ -15,6 +15,8 @@ We believe in learning by doing!
 
 ### Structure of the workshop
 
+> inspired by Week 4 [Node girls workshop](https://github.com/node-girls/node-workshop)
+
 You will be working on this project with your team.  Your mentor will be with you to help you out and answer any questions.
 
 **First, fork this repository and clone onto your own machine**
@@ -43,7 +45,7 @@ Don't worry, you can both get a copy of your work if the other person forks thei
 ---
 ## Walkthrough
 * [Step 0 - Project files walkthrough](walkthrough/step00.md)
-* [Step 0 - Verify a user](walkthrough/step01.md)
+* [Step 1 - Hash a password](walkthrough/step01.md)
 
 **Have fun learning**
 

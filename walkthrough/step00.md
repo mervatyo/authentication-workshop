@@ -29,7 +29,8 @@ later on we will be adding error messages to them to indicate to the user that s
 
 ### Installation guide
 
-- `git clone git@github.com:WebAhead/authentication-workshop.git`
+- fork the repo
+- `git clone {your profile repo that you just forked}`
 - `npm i`
 - `npm run dev` to run the server
 
