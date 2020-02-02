@@ -42,5 +42,27 @@ exports.addUser = (req, res, err) => {
 // make sure to look at home.hbs file to be able to modify the home page when user is logged in
 // also handle all possible errors that might occured by sending a message back to the cleint
 exports.authenticate = async (req, res) => {
+  findByUsername(req.body.username)
+    .then(user => {
+      bcrypt.compare(req.body.password, user.password, function(err, result) {
+        if (!result) {
+          return res.render('login', {
+            activePage: { login: true },
+            error: 'Password is incorrect'
+          });
+        }
 
+        res.render('home', {
+          activePage: { home: true },
+          signedIn: true,
+          username: user.username
+        });
+      });
+    })
+    .catch(() => {
+      res.render('login', {
+        activePage: { login: true },
+        error: e.message
+      });
+    });
 };
