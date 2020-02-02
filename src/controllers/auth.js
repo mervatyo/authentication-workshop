@@ -27,7 +27,6 @@ exports.authenticate = async (req, res) => {
         signedIn: true,
         username: user.username
       });
-
     });
   } catch (e) {
     res.render('login', {
@@ -47,17 +46,21 @@ exports.addUser = (req, res, err) => {
     });
   }
 
-  bcrypt.hash(password, 10, async (err, hash) => {
-    if (err) next(err);
-    try {
-      await addNewUser(username, hash);
-
-      res.redirect('/login');
-    } catch (error) {
-      res.render('register', {
+  bcrypt.hash(password, 10, (err, hash) => {
+    if (err) {
+      return res.render('register', {
         activePage: { register: true },
         error: error.message
       });
     }
+
+    addNewUser(username, hash)
+      .then(() => res.redirect('/login'))
+      .catch(() =>
+        res.render('register', {
+          activePage: { register: true },
+          error: error.message
+        })
+      );
   });
 };
