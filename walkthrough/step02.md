@@ -26,7 +26,11 @@ your Json file should be something similar to this:
 
 - using bcrypt `compare` between the passwords to check if the password that he inserted is correct.
 - if it's wrong send a proper message to the user.
-- if it is correct then render the home page and show the username instead of the initial title (check home.hbs on how to do this). 
+- if it is correct then redirect him to the home page. 
+    - for example for user `Fenrir` you should get the following page after a successful login.
+
+<img src="https://i.imgur.com/NeBuwqL.png" alt="" styles="text-align:center;" />
+
 
 
 
