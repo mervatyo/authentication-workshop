@@ -3,7 +3,7 @@
 After that we added a user to our database, and hashed their password with bcrypt. now we need to verify the passwords when the user tries to log in
 
 
-Now the problem is that in out database the passwords are hashed and salted which means it is not easy to compare a regular user's password (`$tronkPassword123`) with it's hashed state (`$2a$10$045/Zc6RrMraKbXdEJuRS.g0KB3iChSj5RP2oUQCzXF/FgLmVbmwW`).
+Now the problem is that in our database the passwords are hashed and salted which means it is not easy to compare a regular user's password (`$tronkPassword123`) with it's hashed state (`$2a$10$045/Zc6RrMraKbXdEJuRS.g0KB3iChSj5RP2oUQCzXF/FgLmVbmwW`).
 
 bcrypt provides a solution for this (if you have read the documentation in the last exercise then you might have already noticed the function that does this).
 
