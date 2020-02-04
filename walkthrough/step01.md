@@ -119,7 +119,7 @@ Understand:
 + how bcrypt works
 
 Be able to implement the following:
-+ compare passwords (using bcrypt.js) to the user input
++ hash passwords with bcrypt
 
 ## Keywords
 * [`Salt`](https://en.wikipedia.org/wiki/Salt_(cryptography))
