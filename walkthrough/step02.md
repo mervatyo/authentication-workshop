@@ -22,8 +22,6 @@ The user in the login page will insert his username and password, so that means 
 
 At this stage, we have the username and password that the user has inserted in the form in our request body and the user from our database.
 
-your Json file should be something similar to this:
-
 - using bcrypt `compare` between the passwords to check if the password that he inserted is correct.
 - if it's wrong send a proper message to the user.
 - if it is correct then redirect him to the home page. 
