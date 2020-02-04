@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 
 const controllers = require('./controllers/index');
 
@@ -23,6 +24,7 @@ app.engine(
 );
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser())
 app.set('port', process.env.PORT || 3000);
 
 

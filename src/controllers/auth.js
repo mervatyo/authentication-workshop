@@ -52,7 +52,8 @@ exports.authenticate = async (req, res) => {
           });
         }
 
-        res.redirect('home');
+        res.cookie('access_token', user.username)
+        res.redirect('/');
       });
     })
     .catch(() => {
