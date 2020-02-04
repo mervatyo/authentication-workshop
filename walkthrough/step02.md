@@ -20,7 +20,7 @@ The user in the login page will insert his username and password, so that means 
 
 #### 2. Compare passwords
 
-At this stage we have the the username and password that the user name has inserted in the form in our request body. and the user from our database
+At this stage, we have the username and password that the user has inserted in the form in our request body and the user from our database.
 
 your Json file should be something similar to this:
 
