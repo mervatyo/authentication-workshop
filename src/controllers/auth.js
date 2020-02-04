@@ -52,11 +52,7 @@ exports.authenticate = async (req, res) => {
           });
         }
 
-        res.render('home', {
-          activePage: { home: true },
-          signedIn: true,
-          username: user.username
-        });
+        res.redirect('home');
       });
     })
     .catch(() => {
