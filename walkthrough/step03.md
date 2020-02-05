@@ -54,7 +54,7 @@ Cookies are useful as they allow us to store information about a client. As the 
 Here we are setting a very simple cookie with a key of `logged_in` and a value of `true`. It will do for now as we are focusing purely on how to transmit cookies, but in reality there are two problems.
 
 1. If you have multiple users, there is no way of telling the difference between them.
-2. There is NO SECURITY in place. Cookies can very easily be edited in Devtools. For example, if you have a cookie of `admin=false`, it is very easy to change that to `admin=true`! The different ways to protect cookies from tampering will be in workshop 3...
+2. There is NO SECURITY in place. Cookies can very easily be edited in Devtools. For example, if you have a cookie of `admin=false`, it is very easy to change that to `admin=true`! The different ways to protect cookies from tampering will be in step 04...
 
 :star2: WARNING OVER :star2:
 
@@ -193,4 +193,3 @@ Understand:
 - Why do we use them?
 - How do we set and remove cookies in both NodeJS and ExpressJS?
 - How do we check whether or not a request contains a cookie?
-
