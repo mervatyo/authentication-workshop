@@ -158,7 +158,7 @@ As mentioned above we use cookies to remember a browser/user, right now when a u
 - give the cookie the name `access_token`
 - then where we render the home page (home.js controller), check if the cookie `access_token` exists.
     - if it does then instead of `Welcome to Asgard's gates.` show `Hello there, {username}` (check the home.hbs file for more details on how to do this)
-    - else just how the initial message
+    - else just show the initial message
 
 example for when a successful login occurs:
 <img src="https://i.imgur.com/NeBuwqL.png" alt="" styles="text-align:center;" />
