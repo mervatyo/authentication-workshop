@@ -150,7 +150,7 @@ res.clearCookie('logged_in');
 
 #### 1. Add a cookie on log in.
 
-As mentioned above we use cookies to remember a browser/user, right now when a user successfully logs in he is redirected to the home page and that's, so let's use cookies to indicate to the user that he is logged in to our website.
+As mentioned above we use cookies to remember a browser/user, right now when a user successfully logs in he is redirected to the home page and that's it, so let's use cookies to indicate to the user that he is logged in to our website.
 
 
 - Once a user has successfully logged in, set a cookie  that contains his username.
