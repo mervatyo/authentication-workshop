@@ -9,6 +9,7 @@ const controllers = require('./controllers/index');
 const app = express();
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
+require('dotenv').config()
 
 // set up view engine
 app.set('views', path.join(__dirname, 'views'));
