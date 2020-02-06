@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const controllers = require('./controllers/index');
+require('dotenv').config()
 
 const app = express();
 
