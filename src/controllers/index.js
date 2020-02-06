@@ -11,6 +11,7 @@ router.get('/login', auth.loginPage);
 router.get('/register', auth.registerPage);
 router.post('/authenticate', auth.authenticate);
 router.post('/addUser', auth.addUser);
+router.get('/logout', auth.logout);
 router.use(error.client);
 router.use(error.server);
 
