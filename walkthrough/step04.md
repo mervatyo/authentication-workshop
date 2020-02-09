@@ -5,7 +5,7 @@ Now we have a user logging in and then setting the cookie, and from there we rec
 
 `Token-based authentication` is a way to authenticate a user. The idea is that upon login we create a token (a string) and store it in a cookie. The browser then sends the token with subsequent requests (since cookies are sent with every request), and if the token can be verified (i.e. it is a legitimate token issued by the server), the user is authenticated.
 
-**would love to have an image here but couldn't find any good ones for tokens :smile: issues are welcomed**
+<img src="https://d33wubrfki0l68.cloudfront.net/746c5467430de460750e7fc19963f462d120e018/b1f80/assets-jekyll/blog/what-happens-if-your-jwt-is-stolen/stolen-jwt-e0fbf1b4e58f692decd4f046ac66f1daca94a369bfa6375e7837509e15317c43.png" alt="" styles="text-align:center;" />
 
 > Note: This token authentication is `stateless`, because no data persists on the server in relation to individual tokens. This is in contrast with stateful sessions, where a `session` is created in a database, and the session id is sent to the browser. Then the browser sends the id with each request, and the server checks in the database to validate the session. Being stateless, `token-based authentication` is less memory-intensive than `session-based authentication`, but both methods also have other pros and cons, which you can read about it online.
 
@@ -47,10 +47,6 @@ res.setHeader(
 
 // Express
  res.cookie('data', cookieValue, {HttpOnly: true, secure: true});
-
-// the secure flag is to enable cookies only for
-// https and not http.
-// and HttpOnly is only for webservers
 ```
 
 Great! We now have a cookie that we can add as much information to as we need, but we still have the same **big security problem**: This cookie can be very easily tampered with. (For example, by opening up the DevTools 'Application' tab and setting `admin` to `true`)
