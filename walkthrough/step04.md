@@ -7,7 +7,7 @@ Now we have a user logging in and then setting the cookie, and from there we rec
 
 **would love to have an image here but couldn't find any good ones for tokens :smile: issues are welcomed**
 
-> Note: This token authentication is `stateless`, because no data persists on the server in relation to individual tokens. This is in contrast with stateful sessions, where a `session` is created in a database, and the session id is sent to the browser. Then the browser sends the id with each request, and the server checks in the database to validate the session. Being stateless, `token-based authentication` is less memory-intensive than `session-based authentication`, but both methods also have other pros and cons, which you can read about online.
+> Note: This token authentication is `stateless`, because no data persists on the server in relation to individual tokens. This is in contrast with stateful sessions, where a `session` is created in a database, and the session id is sent to the browser. Then the browser sends the id with each request, and the server checks in the database to validate the session. Being stateless, `token-based authentication` is less memory-intensive than `session-based authentication`, but both methods also have other pros and cons, which you can read about it online.
 
 ## Contents
 
