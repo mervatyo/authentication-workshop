@@ -105,7 +105,7 @@ git commit -m 'enter relevant message'
 ```
 
 
-## [**next step >>>**](walkthrough/step01.md)
+## [**next step >>>**](walkthrough/step02.md)
 ---
 
 
