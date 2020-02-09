@@ -73,8 +73,10 @@ exports.authenticate = (req, res) => {
     });
 };
 
-exports.logout = (req, res) => {
+exports.logout = (req, res, next) => {
   res.clearCookie('access_token');
 
   res.redirect('/');
+
+  next()
 };
