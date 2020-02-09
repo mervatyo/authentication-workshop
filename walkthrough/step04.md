@@ -189,7 +189,7 @@ Right now the value of our cookie `access_token` is `user.username` instead let'
 Cool, so now we need to verify this token, in the home controller again using a method from `jsonwebtoken` (check the documentation above)
 
 - in home.js:
-    - first check if the cookie exists at all (we already did this in the step04)
+    - first check if the cookie exists at all (we already did this in the step03)
     - then verify the token using `jsonwebtoken` package
     - in case there is an error render the error page
 
