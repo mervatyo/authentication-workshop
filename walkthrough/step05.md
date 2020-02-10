@@ -10,7 +10,8 @@ There are many more steps that we can take to secure our website properly(links 
 
 
 Right now the only place where we check if the user is logged in and valid is in the homepage, what if we wanted to check if he is logged in 10 different other routes ?
-So do we write the same code multple time ? No cause then it is not considered to be DRY code (Don't Repeat Yourself)
+Should we write the same code for different routes? 
+**No** because then it is not DRY (Don't Repeat Yourself) code, remember that you should be encapsulating code when you can :sparkles: 
 
 That's where Express middleware comes in, we had a brief introduction about middleware last week using:
 - body-parser
