@@ -23,7 +23,7 @@ That's where Express middleware comes in, we had a brief introduction about midd
 
 ### What are middlewares ?
 
-middlewares functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
 
 
 Middleware functions can perform the following tasks:
