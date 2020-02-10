@@ -4,10 +4,7 @@ Now that we have our user passwords secured using bcrypt, and our cookies encode
 
 There are many more steps that we can take to secure our website properly(links would be available at the bottom), but for now this is a good basis.
 
-<img src="" alt="" styles="text-align:center;" />
-
-**insert security related image here**
-
+:lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock: :lock:
 
 Right now the only place where we check if the user is logged in and valid is in the homepage, what if we wanted to check if he is logged in 10 different other routes ?
 Should we write the same code for different routes? 
@@ -138,7 +135,7 @@ Middlewares are very powerful when your servers get really big and you don't wan
 Let's use what we learned about middlewares above to implement an auth middleware that checks if there is actual cookie and if it's valid.
 
 - we have a middlewares folder with an index file, create an `authCheck` file that exports a function.
-- in the `authCheck` function take the code from `home.js` that checks for the cookie and validates it.
+- in the `authCheck` file take the code from `home.js` that checks for the cookie and validates it.
 > Note: you do not want to render the home page if the cookie is valid or not valid in the middleware, you need to let our home controller handle the page rendering.
 - if everything is fine and valid, set the username to the username that was stored in the cookie and set signedIn to true using [res.locals](https://expressjs.com/en/4x/api.html#res.locals).
 -  if he is not logged in set username to be null and signedIn to be false, after all that run the `next` method to go to the next middleware or controller.
