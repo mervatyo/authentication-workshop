@@ -143,7 +143,7 @@ Let's use what we learned about middlewares above to implement an auth middlewar
 - Add that middleware before our home controller. using the [example of route specific middleware above](#An-example-of-route-specific-middleware).
 - [Fetch our username variable](http://expressjs.com/en/api.html#app.get) and signedIn variable and pass it to our hbs page.
 - if an error occured also pass it in the `res.locals` so the home page can handle the proper rendering.
-We should have the same functionality as the last step but this time we can easly reuse our authCheck before any route.
+We should have the same functionality as the last step but this time we can easily reuse our authCheck before any route.
 
 
 #### 2. Implement login time middleware
