@@ -1,6 +1,6 @@
 # Step06 - Async/Await :tada: 
 
-Last week we learned about promises and how are they better than callbacks readability wise.
+Last week we learned about promises and how they are more readable than callbacks and so better to use.
 
 But promises can get ugly when you chain them or when you want to run multiple promises at the same time, so what if we can use promises that are even easier to read and easier to maintain ?.
 
