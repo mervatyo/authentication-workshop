@@ -94,6 +94,10 @@ const runMe = async () => {
 }
 ```
 
+### Here's an image to compare between callbacks, promises and Async/Await:
+
+<img src="https://image.slidesharecdn.com/asynchistory-170422024901/95/async-history-javascript-19-638.jpg?cb=1492829430" alt="" />
+
 
 
 # Tasks:
