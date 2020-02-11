@@ -54,7 +54,7 @@ Cookies are useful as they allow us to store information about a client. As the 
 Here we are setting a very simple cookie with a key of `logged_in` and a value of `true`. It will do for now as we are focusing purely on how to transmit cookies, but in reality there are two problems.
 
 1. If you have multiple users, there is no way of telling the difference between them.
-2. There is NO SECURITY in place. Cookies can very easily be edited in Devtools. For example, if you have a cookie of `admin=false`, it is very easy to change that to `admin=true`! The different ways to protect cookies from tampering will be in workshop 3...
+2. There is NO SECURITY in place. Cookies can very easily be edited in Devtools. For example, if you have a cookie of `admin=false`, it is very easy to change that to `admin=true`! The different ways to protect cookies from tampering will be in step 04...
 
 :star2: WARNING OVER :star2:
 
@@ -150,7 +150,7 @@ res.clearCookie('logged_in');
 
 #### 1. Add a cookie on log in.
 
-As mentioned above we use cookies to remember a browser/user, right now when a user successfully logs in he is redirected to the home page and that's, so let's use cookies to indicate to the user that he is logged in to our website.
+As mentioned above we use cookies to remember a browser/user, right now when a user successfully logs in he is redirected to the home page and that's it, so let's use cookies to indicate to the user that he is logged in to our website.
 
 
 - Once a user has successfully logged in, set a cookie  that contains his username.
@@ -158,7 +158,7 @@ As mentioned above we use cookies to remember a browser/user, right now when a u
 - give the cookie the name `access_token`
 - then where we render the home page (home.js controller), check if the cookie `access_token` exists.
     - if it does then instead of `Welcome to Asgard's gates.` show `Hello there, {username}` (check the home.hbs file for more details on how to do this)
-    - else just how the initial message
+    - else just show the initial message
 
 example for when a successful login occurs:
 <img src="https://i.imgur.com/NeBuwqL.png" alt="" styles="text-align:center;" />
@@ -193,4 +193,3 @@ Understand:
 - Why do we use them?
 - How do we set and remove cookies in both NodeJS and ExpressJS?
 - How do we check whether or not a request contains a cookie?
-

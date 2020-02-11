@@ -46,6 +46,12 @@ Don't worry, you can both get a copy of your work if the other person forks thei
 ## Walkthrough
 * [Step 0 - Project files walkthrough](walkthrough/step00.md)
 * [Step 1 - Hash a password](walkthrough/step01.md)
+* [Step 2 - Verify user](walkthrough/step02.md)
+* [Step 3 - Cookies](walkthrough/step03.md)
+* [Step 4 - JWT - stateless session management](walkthrough/step04.md)
+* [Step 5 - Authentication middleware](walkthrough/step05.md)
+* [Step 6 - Async/await](walkthrough/step06.md)
+
 
 **Have fun learning**
 
