@@ -4,7 +4,7 @@ Last week we learned about promises and how they are more readable than callback
 
 But promises can get ugly when you chain them or when you want to run multiple promises at the same time, so what if we can use promises that are even easier to read and easier to maintain ?.
 
-This is were Async/Await comes in, The async and await keywords are syntactic sugar for Promises. They aid in presenting the asynchronous code in a synchronous way. They introduce no new concepts, but they change the way that Promise-based code is written.
+This is were Async/Await comes in, the async and await keywords are syntactic sugar for Promises. They aid in presenting the asynchronous code in a synchronous way. They introduce no new concepts, but they change the way that promise-based code is written.
 
 >Note: Async/Await is ES7 so it's not supported by all browsers yet. but it is supported in NodeJs.
 
