@@ -132,7 +132,7 @@ Middlewares are very powerful when your servers get really big and you don't wan
 
 #### 1. build the auth middleware
 
-Let's use what we learned about middlewares above to implement an auth middleware that checks if there is actual cookie and if it's valid.
+Let's use what we learned about middlewares above to implement an auth middleware that checks if there is an actual cookie and if it's valid.
 
 - we have a middlewares folder with an index file, create an `authCheck` file that exports a function.
 - in the `authCheck` file take the code from `home.js` that checks for the cookie and validates it.
@@ -140,10 +140,10 @@ Let's use what we learned about middlewares above to implement an auth middlewar
 - if everything is fine and valid, set the username to the username that was stored in the cookie and set signedIn to true using [res.locals](https://expressjs.com/en/4x/api.html#res.locals).
 -  if he is not logged in set username to be null and signedIn to be false, after all that run the `next` method to go to the next middleware or controller.
 - then in the `middlewares/index.js` folder import `authCheck` and export it within an object.
-- and then add that middleware before our home controller. using the [example of route specific middleware above](#An-example-of-route-specific-middleware).
-- From there [fetch our username variable](http://expressjs.com/en/api.html#app.get) and signedIn variable and pass it to our hbs page.
+- Add that middleware before our home controller. using the [example of route specific middleware above](#An-example-of-route-specific-middleware).
+- [Fetch our username variable](http://expressjs.com/en/api.html#app.get) and signedIn variable and pass it to our hbs page.
 - if an error occured also pass it in the `res.locals` so the home page can handle the proper rendering.
-We should have the same functionality as the last step but this time we can easly reuse our authCheck before any route.
+We should have the same functionality as the last step but this time we can easily reuse our authCheck before any route.
 
 
 #### 2. Implement login time middleware
@@ -153,7 +153,7 @@ We want to track when the user logged in to the website, by logging the date and
 (https://www.npmjs.com/package/winston#quick-start).
 - create middleware specifically for the `authenticate` route that apppends the time and date (and the username) in which the user has logged in to a log file.
 - You can either use Node's `fs` module to write the log files or for an extra challenge try to use [Winston]
-- the middleware can run before or after the logout controller your decision.
+- It is up to you whether to run the middleware before or after the logout controller.
 > Note: keep your logs in a `logs` folder to keep the folder structure for your project neat and clean.
 ---
 
