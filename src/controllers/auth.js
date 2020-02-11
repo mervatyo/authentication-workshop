@@ -15,8 +15,8 @@ exports.registerPage = (req, res) => {
 // a proper error message
 // hash the password, then add the new user to our database using the v addNewUser method
 // make sure to handle any error that might occured
-exports.addUser = (req, res, err) => {
-  bcrypt.hash(password, 10, (err, hash) => {
+exports.addUser = (req, res, err) => 
+  bcrypt.hash(password, 10, async (err, hash) => {
     if (err) {
       return res.render('register', {
         activePage: { register: true },
@@ -24,16 +24,19 @@ exports.addUser = (req, res, err) => {
       });
     }
 
-    addNewUser(username, hash)
-      .then(() => res.redirect('/login'))
-      .catch(() =>
-        res.render('register', {
-          activePage: { register: true },
-          error: error.message
-        })
-      );
+    try {
+      await addNewUser(username, hash)
+      
+      res.redirect('/login')
+    } catch(error) {
+
+      res.render('register', {
+        activePage: { register: true },
+        error: error.message
+      })
+
+    }
   });
-};
 
 // this function handles the POST /authenticate route
 // it finds the user in our database by his username that he inputed
@@ -41,36 +44,38 @@ exports.addUser = (req, res, err) => {
 // using bcrypt and then redirects back to the home page
 // make sure to look at home.hbs file to be able to modify the home page when user is logged in
 // also handle all possible errors that might occured by sending a message back to the cleint
-exports.authenticate = (req, res) => {
-  findByUsername(req.body.username)
-    .then(user => {
-      bcrypt.compare(req.body.password, user.password, function(err, result) {
-        if (!result) {
-          return res.render('login', {
+exports.authenticate = async (req, res) => {
+  try {
+    const { password, username } = req.bodu;
+    
+    const user = await findByUsername(username);
+
+    bcrypt.compare(password, user.password, function(err, result) {
+      if (!result) {
+        return res.render('login', {
+          activePage: { login: true },
+          error: 'Password is incorrect'
+        });
+      }
+
+      jwt.sign(user.username, process.env.JWT_SECRET, function(err, token) {
+        if (err) {
+          res.render('login', {
             activePage: { login: true },
-            error: 'Password is incorrect'
+            error: err.message
           });
         }
 
-        jwt.sign(user.username, process.env.JWT_SECRET, function(err, token) {
-          if (err) {
-            res.render('login', {
-              activePage: { login: true },
-              error: err.message
-            });
-          }
-
-          res.cookie('access_token', token);
-          res.redirect('/');
-        });
-      });
-    })
-    .catch(e => {
-      res.render('login', {
-        activePage: { login: true },
-        error: e.message
+        res.cookie('access_token', token);
+        res.redirect('/');
       });
     });
+  } catch (error) {
+    res.render('login', {
+      activePage: { login: true },
+      error: error.message
+    });
+  }
 };
 
 exports.logout = (req, res, next) => {
@@ -78,5 +83,5 @@ exports.logout = (req, res, next) => {
 
   res.redirect('/');
 
-  next()
+  next();
 };
