@@ -132,7 +132,7 @@ Middlewares are very powerful when your servers get really big and you don't wan
 
 #### 1. build the auth middleware
 
-Let's use what we learned about middlewares above to implement an auth middleware that checks if there is actual cookie and if it's valid.
+Let's use what we learned about middlewares above to implement an auth middleware that checks if there is an actual cookie and if it's valid.
 
 - we have a middlewares folder with an index file, create an `authCheck` file that exports a function.
 - in the `authCheck` file take the code from `home.js` that checks for the cookie and validates it.
