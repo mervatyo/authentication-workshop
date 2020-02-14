@@ -167,7 +167,7 @@ git commit -m 'enter relevant message'
 ```
 
 
-## [**next step >>>**](walkthrough/step06.md)
+## [**next step >>>**](./step06.md)
 ---
 
 ### Learning outcomes
