@@ -150,9 +150,8 @@ We should have the same functionality as the last step but this time we can easi
 
 We want to track when the user logged in to the website, by logging the date and time in which he logged it
 
-(https://www.npmjs.com/package/winston#quick-start).
-- create middleware specifically for the `authenticate` route that apppends the time and date (and the username) in which the user has logged in to a log file.
-- You can either use Node's `fs` module to write the log files or for an extra challenge try to use [Winston]
+- create middleware specifically for the `authenticate` route that apppends the time and date (and the username) in which the user has logged into a log file.
+- You can either use Node's `fs` module to write the log files or for an extra challenge try to use [Winston](https://www.npmjs.com/package/winston#quick-start)
 - It is up to you whether to run the middleware before or after the logout controller.
 > Note: keep your logs in a `logs` folder to keep the folder structure for your project neat and clean.
 ---
