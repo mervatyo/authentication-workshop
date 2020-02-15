@@ -1,6 +1,5 @@
 // use these functions to manipulate our database
 const { findByUsername, addNewUser } = require('../models/users/User.model');
-const bcrypt = require('bcrypt');
 
 exports.loginPage = (req, res) => {
   res.render('login', { activePage: { login: true } });
