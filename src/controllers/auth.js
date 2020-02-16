@@ -16,6 +16,15 @@ exports.registerPage = (req, res) => {
 // hash the password, then add the new user to our database using the v addNewUser method
 // make sure to handle any error that might occured
 exports.addUser = (req, res, err) => {
+  const { password, username, confirmPassword } = req.body;
+
+  if (password !== confirmPassword) {
+    return res.render('register', {
+      activePage: { register: true },
+      error: "Passwords don't match"
+    });
+  }
+
   bcrypt.hash(password, 10, (err, hash) => {
     if (err) {
       return res.render('register', {
