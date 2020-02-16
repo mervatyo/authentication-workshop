@@ -67,6 +67,12 @@ $ bcrypt id $ number of rounds $ 128 bit salt         . 184 bit hash
 
 ## Tasks:
 
+before we start the tasks we need to download `bcrypt` 
+
+```bash=
+npm i bcrypt --save
+```
+
 #### 1. Implement the hashing function
 
 We have the register page to add a new user, the form will send a POST request to /addUser, go to that controller and as a start hash the password using bcrypt and console log it to see that everything is working.
@@ -105,7 +111,7 @@ git commit -m 'enter relevant message'
 ```
 
 
-## [**next step >>>**](walkthrough/step02.md)
+## [**next step >>>**](./step02.md)
 ---
 
 

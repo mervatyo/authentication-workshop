@@ -2,7 +2,12 @@ const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
+<<<<<<< HEAD
 const cookieParser = require('cookie-parser');
+=======
+const helmet = require('helmet');
+
+>>>>>>> step02-solution
 const controllers = require('./controllers/index');
 
 const app = express();
@@ -25,6 +30,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.set('port', process.env.PORT || 3000);
+
+app.set('port', process.env.PORT || 3000);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(helmet());
+}
 
 app.use(controllers);
 
