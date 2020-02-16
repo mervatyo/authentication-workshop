@@ -20,7 +20,7 @@ exports.addUser = (req, res, err) => {
   if (password !== confirmPassword) {
     return res.render('register', {
       activePage: { register: true },
-      error: 'Passwords don\'t match'
+      error: "Passwords don't match"
     });
   }
 
@@ -49,6 +49,6 @@ exports.addUser = (req, res, err) => {
 // using bcrypt and then redirects back to the home page
 // make sure to look at home.hbs file to be able to modify the home page when user is logged in
 // also handle all possible errors that might occured by sending a message back to the cleint
-exports.authenticate = async (req, res) => {
+exports.authenticate = (req, res) => {};
 
-};
+exports.logout = (req, res) => {};

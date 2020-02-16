@@ -4,6 +4,11 @@
       "username": "admin",
       "password": "$2b$10$7cNGQVRiflCCDmVxTKk4Eu52Jf5DVakSLyRL1xS7BFoOFzXIXuYp2",
       "id": 0
+    },
+    {
+      "username": "asd",
+      "password": "$2b$10$vPw07m0ZwQLQzc7j2st6BOHwbaMtGY.4a8bfEpV1/ocoFiwYqhUYC",
+      "id": 1
     }
   ]
 }
