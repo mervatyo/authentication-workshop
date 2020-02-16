@@ -1,7 +1,7 @@
 # Step 03 - Make access tokens
 
 
-:cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
+:cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie: :cookie:
 
 
 ### Remembering the browser
@@ -148,6 +148,19 @@ res.clearCookie('logged_in');
 
 ## Tasks:
 
+before we start the tasks we need to download `cooke-parser` and add it to our Express app.
+
+```bash=
+npm i cookie-parser --save
+```
+
+and then in our `app.js` require the package and call it `cookieParser`, then add the following line after our body parser middleware:
+
+```javascript=
+    app.use(cookieParser());
+```
+
+
 #### 1. Add a cookie on log in.
 
 As mentioned above we use cookies to remember a browser/user, right now when a user successfully logs in he is redirected to the home page and that's it, so let's use cookies to indicate to the user that he is logged in to our website.
@@ -183,7 +196,7 @@ git commit -m 'enter relevant message'
 ```
 
 
-## [**next step >>>**](walkthrough/step04.md)
+## [**next step >>>**](./step04.md)
 ---
 
 
