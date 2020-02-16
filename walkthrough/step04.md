@@ -168,12 +168,19 @@ This JWT is protected from tampering, because it is signed. The payload and head
 
 # Tasks:
 
+before we start the tasks we need to download `jsonwebtoken` package.
+
+```bash=
+npm i jsonwebtoken --save
+```
+
+
 #### 1. Sign a cookie on login.
 
 Right now the value of our cookie `access_token` is `user.username` instead let's change it to the signed value of `user.username`.
 
 - First create a `.env` file that has a variable `JWT_SECRET` that equals to a secret of your choice.
-- then in our auth controller, import the `jsonwebtoken` package and use it to sign `user.username`.
+- then in our auth controller, import/require the `jsonwebtoken` package and use it to sign `user.username`.
 - then set the cookie `access_token` equals to the value of the jwt token that we created.
 - Don't forget to handle the error of jwt sign method.
 
@@ -202,7 +209,7 @@ git commit -m 'enter relevant message'
 ```
 
 
-## [**next step >>>**](walkthrough/step05.md)
+## [**next step >>>**](./step05.md)
 ---
 
 ### Learning outcomes

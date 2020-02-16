@@ -37,7 +37,7 @@ later on we will be adding error messages to them to indicate to the user that s
 ### 
 
 
-## [**next step >>>**](walkthrough/step01.md)
+## [**next step >>>**](./step01.md)
 ---
 ## Keywords
 * [`The MVC pattern`](https://www.tutorialspoint.com/mvc_framework/mvc_framework_introduction.htm)

@@ -37,7 +37,7 @@ git commit -m 'enter relevant message'
 ```
 
 
-## [**next step >>>**](walkthrough/step03.md)
+## [**next step >>>**](./step03.md)
 ---
 
 
