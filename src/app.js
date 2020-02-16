@@ -4,7 +4,6 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 
 const controllers = require('./controllers/index');
-require('dotenv').config()
 
 const app = express();
 

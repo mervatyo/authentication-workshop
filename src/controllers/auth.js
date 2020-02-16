@@ -20,7 +20,7 @@ exports.addUser = (req, res, err) => {
   if (password !== confirmPassword) {
     return res.render('register', {
       activePage: { register: true },
-      error: 'Passwords don\'t match'
+      error: "Passwords don't match"
     });
   }
 
@@ -50,7 +50,7 @@ exports.addUser = (req, res, err) => {
 // make sure to look at home.hbs file to be able to modify the home page when user is logged in
 // also handle all possible errors that might occured by sending a message back to the cleint
 exports.authenticate = (req, res) => {
-findByUsername(req.body.username)
+  findByUsername(req.body.username)
     .then(user => {
       bcrypt.compare(req.body.password, user.password, function(err, result) {
         if (!result) {
@@ -59,7 +59,6 @@ findByUsername(req.body.username)
             error: 'Password is incorrect'
           });
         }
-
 
         res.render('home', {
           activePage: { home: true },
@@ -74,9 +73,6 @@ findByUsername(req.body.username)
         error: e.message
       });
     });
-};	};
+};
 
-
-exports.logout = (req, res) => {
-  
-}
+exports.logout = (req, res) => {};
