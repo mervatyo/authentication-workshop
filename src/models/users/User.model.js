@@ -12,7 +12,7 @@ const checkIfUserExists = (username) =>
 exports.findByUsername = (username) =>
   new Promise((resolve, reject) =>
     db
-      .query('SELECT * FROM users WHERE useranem = $1', username)
+      .query('SELECT * FROM users WHERE username = $1', username)
       .then((user) => {
         if (!user.length) {
           reject(new Error('No user was found'));
