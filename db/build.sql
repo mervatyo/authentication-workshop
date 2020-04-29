@@ -1,0 +1,15 @@
+BEGIN;
+
+DROP TABLE IF EXISTS users CASCADE;
+
+CREATE TABLE users(
+  id SERIAL PRIMARY KEY,
+  username VARCHAR(100) UNIQUE NOT NULL,
+  password VARCHAR(1000) NOT NULL
+);
+
+
+INSERT INTO users (username, password) VALUES
+('admin', '$2b$10$7cNGQVRiflCCDmVxTKk4Eu52Jf5DVakSLyRL1xS7BFoOFzXIXuYp2');
+
+COMMIT;
