@@ -12,7 +12,7 @@ This is were Async/Await comes in, the async and await keywords are syntactic su
 
 Here is some code that uses plain Promises:
 
-```javascript=
+```js
 const doAsynchronousStuff = ...; // function that returns a Promise
 
 function doAsync() {
