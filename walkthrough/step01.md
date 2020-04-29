@@ -83,10 +83,6 @@ We have the register page to add a new user, the form will send a POST request t
 
 Using the `addNewUser` method from our model, add the user to our db and then redirect the user to the homepage or render the homepage as a response your choice.
 
-your Json file should be something similar to this:
-
-<img src="https://i.imgur.com/J6wIYzK.png" alt="" styles="text-align:center;" />
-
 
 #### 3. Handling and showing errors
 The third input in the register form is a confirm password input. what if the it's wrong ? then you will need to render the register page again with an error telling the user what went wrong.

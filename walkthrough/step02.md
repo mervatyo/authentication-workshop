@@ -16,7 +16,7 @@ The user in the login page will insert his username and password, so that means 
 
 - so use the `findByUsername` method to check if the user exists
 - if he doesn't send a proper error message (you will need to add that in the login view)
-- and if he does for now just console log the hashed password. 
+- and if he does **for now** just console log the hashed password. 
 
 #### 2. Compare passwords
 
