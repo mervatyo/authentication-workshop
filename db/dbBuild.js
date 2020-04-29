@@ -8,14 +8,9 @@ const sql = (file) =>
 const build = sql('./build.sql');
 
 db.query(build)
-  .then((res) => {
+  .then(() => {
     console.log('Database built');
-    db
-    .query('INSERT INTO users (username, password) VALUES ($1, $2)', ['awdasd', 'asdasd'])
-    .then((exists) => {
-      
-      console.log(exists)
-    }).catch(console.log)
-    // process.exit()
+
+    process.exit()
   })
   .catch((e) => console.error('error', e));
