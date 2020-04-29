@@ -15,7 +15,7 @@ exports.registerPage = (req, res) => {
 // a proper error message
 // hash the password, then add the new user to our database using the v addNewUser method
 // make sure to handle any error that might occured
-exports.addUser = (req, res, err) => {
+exports.addUser = (req, res) => {
   const { password, username, confirmPassword } = req.body;
 
   if (password !== confirmPassword) {
@@ -25,7 +25,7 @@ exports.addUser = (req, res, err) => {
     });
   }
 
-  bcrypt.hash(password, 10, (err, hash) => {
+  bcrypt.hash(password, 10, async (err, hash) => {
     if (err) {
       return res.render('register', {
         activePage: { register: true },
@@ -38,7 +38,6 @@ exports.addUser = (req, res, err) => {
       
       res.redirect('/login')
     } catch(error) {
-
       res.render('register', {
         activePage: { register: true },
         error: error.message
@@ -56,7 +55,7 @@ exports.addUser = (req, res, err) => {
 // also handle all possible errors that might occured by sending a message back to the cleint
 exports.authenticate = async (req, res) => {
   try {
-    const { password, username } = req.bodu;
+    const { password, username } = req.body;
     
     const user = await findByUsername(username);
 
