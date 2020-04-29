@@ -67,6 +67,12 @@ $ bcrypt id $ number of rounds $ 128 bit salt         . 184 bit hash
 
 ## Tasks:
 
+before we start the tasks we need to download `bcrypt` 
+
+```bash=
+npm i bcrypt --save
+```
+
 #### 1. Implement the hashing function
 
 We have the register page to add a new user, the form will send a POST request to /addUser, go to that controller and as a start hash the password using bcrypt and console log it to see that everything is working.
@@ -76,10 +82,6 @@ We have the register page to add a new user, the form will send a POST request t
 #### 2. Saving and redirecting
 
 Using the `addNewUser` method from our model, add the user to our db and then redirect the user to the homepage or render the homepage as a response your choice.
-
-your Json file should be something similar to this:
-
-<img src="https://i.imgur.com/J6wIYzK.png" alt="" styles="text-align:center;" />
 
 
 #### 3. Handling and showing errors
@@ -105,7 +107,7 @@ git commit -m 'enter relevant message'
 ```
 
 
-## [**next step >>>**](walkthrough/step01.md)
+## [**next step >>>**](./step02.md)
 ---
 
 
@@ -119,7 +121,7 @@ Understand:
 + how bcrypt works
 
 Be able to implement the following:
-+ compare passwords (using bcrypt.js) to the user input
++ hash passwords with bcrypt
 
 ## Keywords
 * [`Salt`](https://en.wikipedia.org/wiki/Salt_(cryptography))
