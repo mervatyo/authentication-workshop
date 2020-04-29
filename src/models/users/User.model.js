@@ -32,18 +32,21 @@ exports.findByUsername = (username) =>
  */
 exports.addNewUser = async (username, password) =>
   new Promise((resolve, reject) =>
+  // EXISTS returns the following [ { exists: BOOLEAN } ]
     db
       .query('SELECT EXISTS(SELECT 1 FROM users WHERE username = $1)', username)
       .then(([{ exists }]) => {
+
         if (exists) {
           return reject(new Error('User already exists in our database'));
         }
 
+        // adds the user to the db
         db.query('INSERT INTO users (username, password) VALUES ($1, $2)', [
           username,
           password,
-        ]).then((exists) => resolve('User has been added'));
-        
+        ]).then(() => resolve('User has been added'));
+
       })
       .catch((error) => {
         console.log(`addNewUser Error: ${error}`);
