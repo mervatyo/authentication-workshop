@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
       decoded
     ) {
       if (err) {
-        res.local.error = err;
+        res.locals.error = err;
         return next();
       }
 
