@@ -15,8 +15,6 @@ We believe in learning by doing!
 
 ### Structure of the workshop
 
-> inspired by Week 4 [Node girls workshop](https://github.com/node-girls/node-workshop)
-
 You will be working on this project with your team.  Your mentor will be with you to help you out and answer any questions.
 
 **First, fork this repository and clone onto your own machine**
