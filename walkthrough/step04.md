@@ -28,7 +28,8 @@ For example, inside a cookie, it might be useful to store:
 2. their access privileges.
 
 We could write in our handler:
-```javascript=
+```javascript
+
 const userInformation = {
   userId: 45,
   accessPrivileges: {
@@ -109,7 +110,8 @@ Here is an example of a JWT:
 
 
 So to build it in Node.js:
-```javascript=
+```javascript
+
 const base64Encode = str =>
   Buffer.from(str).toString('base64');
 
@@ -144,7 +146,8 @@ const jwt = `${encodedHeader}.${encodedPayload}.${signature}`;
 
 So to build it in Express:
 
-```javascript=
+```javascript
+
 const jwt = require('jsonwebtoken');
 
 jwt.sign(dataToEncode, process.env.JWT_SECRET, function(err, token) {
@@ -170,7 +173,7 @@ This JWT is protected from tampering, because it is signed. The payload and head
 
 before we start the tasks we need to download `jsonwebtoken` package.
 
-```bash=
+```bash
 npm i jsonwebtoken --save
 ```
 
