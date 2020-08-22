@@ -116,7 +116,7 @@ app.post('/create-user', validateNewUser, anotherMiddleware, andAnother, (req, r
 
 Or you can have them in an array:
  
-```javascript=
+```javascript
 app.post('/create-user', [validateNewUser, anotherMiddleware, andAnother], (req, res, next) => {
 
     // Add new user to our database
