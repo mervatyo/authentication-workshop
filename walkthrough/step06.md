@@ -37,7 +37,7 @@ function doAsync() {
 
 But with Async/Await our code looks like this:
 
-```javascript=
+```javascript
 
 async function doAsync() {
     try {
@@ -57,7 +57,8 @@ Promises are an incredibly important part of JavaScript. It allows us to hook in
 In order to write Async/Await you need to add:
 1. the `async` keyword before the function declaration, for example:
 
-```javascript=
+```javascript
+
 async function runMe() {
     // Some code here    
 }
@@ -65,7 +66,8 @@ async function runMe() {
 
 or 
 
-```javascript=
+```javascript
+
 const runMe = async () => {
     // Some code here    
 }
@@ -73,7 +75,8 @@ const runMe = async () => {
 
 2. add the `await` keyword before the pending promise and assign it into a variable
 
-```javascript=
+```javascript
+
 const runMe = async () => {
     const result = await fetchData()
 }
@@ -81,7 +84,8 @@ const runMe = async () => {
 
 3. you need to wrap the `await` statement with `try {} catch {}`, cause if an error occurs the `await` keyword **throws** the error, so we need to catch it.
 
-```javascript=
+```javascript
+
 const runMe = async () => {
 
   try {
