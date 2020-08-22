@@ -36,7 +36,7 @@ Middleware functions can perform the following tasks:
 
 ### An example of a application level middleware
 
-```javascript=
+```javascript
 
 // middleware logging timestamp before handling requests
 app.use((req, res, next) => {
@@ -59,7 +59,8 @@ app.use((req, res) => {
 ```
 
 since express runs synchronously it will always run 
-```javascript=
+```javascript
+
 app.use((req, res, next) => {
   console.log(Date.now(), 'before');
   next();
@@ -73,7 +74,7 @@ Now let's see a different example
 
 ### An example of route specific middleware
 
-```javascript=
+```javascript
 
 const validateNewUser = (req ,res, next) => {
     const {username, password, confirmPassword } = req.body
@@ -103,7 +104,7 @@ app.post('/create-user', validateNewUser, (req, res, next) => {
 
 In this example the `validateNewUser` middleware is the second argument for `app.post`, you can have as many functions or middlewares as you want. for example:
 
-```javascript=
+```javascript
 
 app.post('/create-user', validateNewUser, anotherMiddleware, andAnother, (req, res, next) => {
 
