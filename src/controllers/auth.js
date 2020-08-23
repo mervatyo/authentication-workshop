@@ -1,6 +1,4 @@
 const bcrypt = require("bcrypt");
-const saltRounds = 10;
-const someOtherPlaintextPassword = "";
 
 // use these functions to manipulate our database
 
@@ -56,7 +54,10 @@ exports.authenticate = (req, res) => {
         if (result == false) {
           return res.render("login", { error: "password incorrect" });
         }
-
+        res.cookie("access_token", req.body.username, {
+          httpOnly: true,
+          maxAge: 9000,
+        });
         res.redirect("/");
       });
     })
@@ -65,4 +66,7 @@ exports.authenticate = (req, res) => {
     });
 };
 
-exports.logout = (req, res) => {};
+exports.logout = (req, res) => {
+  res.clearCookie("access_token");
+  res.redirect("/");
+};
