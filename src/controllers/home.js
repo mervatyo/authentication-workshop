@@ -1,7 +1,29 @@
+const jwt = require("jsonwebtoken");
+
 exports.get = (req, res) => {
-  res.render("home", {
-    signedIn: req.cookies.access_token,
-    username: req.cookies.access_token,
-    activePage: { home: true },
-  });
+  if (!req.cookies.access_token) {
+    console.log(req.cookies);
+
+    return res.render("home", {
+      activePage: { home: true },
+    });
+  }
+
+  jwt.verify(
+    req.cookies.access_token,
+    process.env.JWT_SECRET,
+    (err, decoded) => {
+      console.log(decoded);
+      if (err)
+        return res.render("home", {
+          activePage: { home: true },
+        });
+      console.log(decoded);
+      res.render("home", {
+        signedIn: true,
+        username: decoded.username,
+        activePage: { home: true },
+      });
+    }
+  );
 };

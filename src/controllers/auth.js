@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 // use these functions to manipulate our database
 
@@ -54,11 +55,22 @@ exports.authenticate = (req, res) => {
         if (result == false) {
           return res.render("login", { error: "password incorrect" });
         }
-        res.cookie("access_token", req.body.username, {
-          httpOnly: true,
-          maxAge: 9000,
+
+        jwt.sign({ username: data.username }, process.env.JWT_SECRET, function (
+          err,
+          token
+        ) {
+          if (err) {
+            return res.render("login", { error: err.message });
+          }
+          res.cookie("access_token", token, {
+            httpOnly: true,
+            maxAge: 9000,
+          });
+          res.redirect("/");
+
+          console.log(token);
         });
-        res.redirect("/");
       });
     })
     .catch((error) => {
