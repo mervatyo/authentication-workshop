@@ -44,6 +44,25 @@ exports.addUser = (req, res, err) => {
 // using bcrypt and then redirects back to the home page
 // make sure to look at home.hbs file to be able to modify the home page when user is logged in
 // also handle all possible errors that might occured by sending a message back to the cleint
-exports.authenticate = (req, res) => {};
+exports.authenticate = (req, res) => {
+  findByUsername(req.body.username)
+    .then((data) => {
+      console.log("hoon", data);
+      const someOtherPlaintextPassword = req.body.password;
+      console.log("nnn", req.body.password);
+      const hash = data.password;
+      bcrypt.compare(someOtherPlaintextPassword, hash, function (err, result) {
+        if (err) return res.render("login", { error: err.message });
+        if (result == false) {
+          return res.render("login", { error: "password incorrect" });
+        }
+
+        res.redirect("/");
+      });
+    })
+    .catch((error) => {
+      res.render("login", { error: error.message });
+    });
+};
 
 exports.logout = (req, res) => {};
